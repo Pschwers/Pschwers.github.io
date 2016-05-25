@@ -288,7 +288,7 @@
             d = (userWantedGradeVar) - (userCurrentPercentVar * ((100 - userEOCVar) / 100))
             //print:
             "stuff"
-            if(userWantedGradeVar <- (userCurrentPercentVar + userEOCVar)){
+            if(userWantedGradeVar <= (userCurrentPercentVar + userEOCVar)){
               e = ((userWantedGradeVar - (userCurrentPercentVar * (100 - userEOCVar))) / userEOCVar)
               //print:
               console.log("you must get a " + e + "% to get a " + userWantedGradeVar + ".");
