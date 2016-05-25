@@ -241,11 +241,11 @@
             userEOCVar = JSON.parse($('#userEOC').val()) //Var C
             userWantedGradeVar = JSON.parse($('#userWantedGrade').val());//Var A
             
-            d = (userWantedGradeVar) - (userCurrentPercentVar * ((100 - userEOCVar) / 100))
+            d = (userWantedGradeVar - (userCurrentPercentVar * ((100 - userEOCVar) / 100)))
             //print:
             "stuff"
-            if(userWantedGradeVar <- (userCurrentPercentVar + userEOCVar)){
-              e = ((userWantedGradeVar - (userCurrentPercentVar * (100 - userEOCVar))) / userEOCVar)
+            if(userWantedGradeVar <= (userCurrentPercentVar + userEOCVar)){
+              e = ((userWantedGradeVar - (userCurrentPercentVar * ((100 - userEOCVar) / 100))) / userEOCVar)
               //print:
               console.log("you must get a " + e + "% to get a " + userWantedGradeVar + ".");
               $('#suggestGrade').text("you must get a " + e + "% to get a " + userWantedGradeVar + ".");
@@ -253,7 +253,7 @@
             else{
               //print:
               console.log("you cannot get that, the max you can get is a " + (userCurrentPercentVar + userEOCVar) + "%.");
-              $('#suggestGrade').text("you cannot get that, the max you can get is a " + (userCurrentPercentVar + userEOCVar) + "%.");
+              $('#suggestGrade').text("you cannot get that, the max you can get is a " + ((userCurrentPercentVar * ((100 - userEOCVal) / 100)) + userEOCVar) + "%.");
              
             }
         }
